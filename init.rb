@@ -12,26 +12,43 @@
                 # [8,5,2]
                 # [9,6,3]
               # ]
+class Grid
+  def self.rotate(matrix)
+    results = []
+    col = matrix.size
+ 
+    row = matrix[0].size
 
-  def rotate(input)
-    rotate_grid = []
-    input.each do |nested_array|
-      # logic to go through each nested array
-    end
-    rotate_grid
+    row.times { |i|
+      per_line = []
+      col.times { |j|
+        per_line << matrix[j][i]
+       
+      }
+      results << per_line
+
+    }
+
+    results.each_index{|x|results[x].reverse!}
   end
+  
+end
 
 
 
 
 
 # Driver Code
-input = [
+matrix = [
       [1, 2, 3],
       [4, 5, 6],
       [7, 8, 9]
     ]
-my_nested_array.rotate(input)
 
+p Grid.rotate(matrix)
+
+# Desire Output = [[7,4,1]
+#                  [8,5,2]
+#                  [9,6,3]]
 
 
